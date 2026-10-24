@@ -10,6 +10,8 @@ parameters:
     # You should uncomment this if you want to use pdo_sqlite
     #database_path: '%kernel.root_dir%/../var/data/data.sqlite'
 
+    mailer_to: ~
+
     mailer_transport: smtp
     mailer_host: 127.0.0.1
     mailer_user: ~
@@ -17,3 +19,6 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret: ThisTokenIsNotSoSecretChangeIt
+
+    # Google Maps JavaScript API key (Location page)
+    api_key: ~

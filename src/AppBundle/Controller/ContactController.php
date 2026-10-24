@@ -55,13 +55,14 @@ class ContactController extends Controller
         $to = $this->getParameter('mailer_to');
         $subject = 'LHD Contact Form';
         $emailFrom = $data['email_address'];
+        $siteEmail = 'sales@lhdvancentre.com';
 
-        $headers[] = sprintf('From: %s', $emailFrom);
+        $headers[] = sprintf('From: %s', $siteEmail);
         $headers[] = sprintf('Reply-To: %s', $emailFrom);
         $headers[] = 'MIME-Version: 1.0';
         $headers[] = 'Content-Type: text/html; charset=UTF-8';
 
-        $sent = mail($to, $subject, $message, implode("\r\n", $headers), '-f ' . $emailFrom);
+        $sent = mail($to, $subject, $message, implode("\r\n", $headers), '-f ' . $siteEmail);
 
         if (!$sent) {
             $this->addFlash('danger', 'Sorry, something went wrong and your message has not been sent.');

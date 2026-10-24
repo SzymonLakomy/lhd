@@ -1,6 +1,7 @@
 doctrine:
     dbal:
-        url: '%env(resolve:DATABASE_URL)%'
+        # no resolve: a url-encoded password (%XX) must not be read as %parameter%
+        url: '%env(DATABASE_URL)%'
         server_version: '10.11.14-MariaDB'
         # existing tables are utf8mb3_unicode_ci (mysqlnd only knows the "utf8" alias)
         charset: utf8
